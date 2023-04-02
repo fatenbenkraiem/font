@@ -1,0 +1,19 @@
+<div class="mb-3">
+    <label for="nomressource" class="form-label">Nom </label>
+    <input type="text" class="form-control" #nomressource>
+  </div>
+
+  <div class="mb-3">
+    <label for="ressourcesdescription" class="form-label">Description </label>
+    <textarea  class="form-control" #ressourcesdescription rows="3"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label class="articleauthor" for="exampleCheck1">ressources</label>
+    <input type="text" class="form-control" #articleAuthor>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-succes" (click)="add(nomressource
+    .value, ressourcesdescription.value, articleAuthor.value); nomressource.value=''; ressourcesdescription.value=''; articleAuthor.value=''">Add</button>
+  </div>

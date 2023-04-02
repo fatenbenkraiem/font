@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ressource of ressources">
+      <td>{{ ressource.id }}</td>
+      <td>{{ ressource.name }}</td>
+      <td>{{ ressource.description }}</td>
+      
+    </tr>
+  </tbody>
+</table>

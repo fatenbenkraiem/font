@@ -1,0 +1,44 @@
+<h1>Demande de réservation</h1>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Frist Name</label>
+      <input type="text" formControlName="name" class="form-control" placeholder="Enter your frist name">
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" formControlName="name" class="form-control" placeholder="Enter your last name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" formControlName="email" class="form-control" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" formControlName="phone" class="form-control" placeholder="Enter your phone number">
+    </div>
+    <div class="form-group">
+      <label>Date début</label>
+      <input type="date" formControlName="date" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Date fin</label>
+      <input type="date" formControlName="date" class="form-control">
+    </div>
+    <label for="typeRessource">Choisir un type de ressource :</label>
+    <select name="typeRessource" id="typeRessource">
+      <option value="type1">Type 1</option>
+      <option value="type2">Type 2</option>
+      <option value="type3">Type 3</option>
+    </select>
+    
+    <label for="ressource">Choisir une ressource :</label>
+    <select name="ressource" id="ressource">
+      <option value="ressource1">Ressource 1</option>
+      <option value="ressource2">Ressource 2</option>
+      <option value="ressource3">Ressource 3</option>
+    </select>
+    
+    <label for="description">Description de la ressource :</label>
+    <textarea name="description" id="description" class="form-control" rows="4"></textarea>
+    <button type="submit" class="btn btn-primary" [disabled]="submitted">Enregister</button>
+  </form>

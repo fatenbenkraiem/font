@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Ressource</h1>
+    <div>
+       <table class="table table-striped">
+          <thead>
+             <th>ID</th>
+             <th>Nom</th>
+             <th>Description</th>
+             <th>Author</th>
+          </thead>
+          <tbody *ngIf="hasData">
+             <tr *ngFor="let ressource of ressources">
+                <td>{{ ressource.id }}</td>
+                <td>{{ ressource.nom }}</td>
+                <td>{{ ressource.description }}</td>
+                <td>{{ ressource.author }}</td>
+                <td><button class="btn btn-info" (click)="setToUpdate(ressource.id)" routerLink="/edit-res/{{ressource.id}}">Edit</button>
+                   &nbsp;
+                   <button class="btn btn-danger" (click)="deleteRessource(ressource.id)">Delete</button>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+    <div><button class="btn btn-primary" routerLink="/add">Add new Ressource</button></div>
+ 
+ </div>
+ 

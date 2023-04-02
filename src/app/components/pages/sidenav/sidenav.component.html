@@ -1,0 +1,31 @@
+<mat-nav-list>
+    <div class="logo py-4">
+      <img src="./assets/logo.png" alt="logo" />
+    </div>
+     
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2">Réservation </h2>
+
+       <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+      <mat-icon>home</mat-icon> Home
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+      <mat-icon>profil</mat-icon> profil
+    </a>
+   
+    <a mat-list-item> <mat-icon>edit</mat-icon> Ressources</a>
+    <a mat-list-item> <mat-icon>edit</mat-icon>Réservation</a>
+    
+  </mat-nav-list>

@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Liste des réservations</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerFrom" placeholder="Date de début" [(ngModel)]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFrom></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerTo" placeholder="Date de fin" [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+        <mat-datepicker #pickerTo></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="filter()">Filtrer</button>
+      <button mat-raised-button (click)="reset()">Réinitialiser</button>
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="demandeur">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Demandeur</mat-header-cell>
+          <mat-cell *matCellDef="let reservation">{{ reservation.demandeur }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ressource">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ressource</mat-header-cell>
+          <mat-cell *matCellDef="let reservation">{{ reservation.ressource }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date_debut">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Date de début</mat-header-cell>
+          <mat-cell *matCellDef="let reservation">{{ reservation.date_debut }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date_fin">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Date de fin</mat-header-cell>
+          <mat-cell *matCellDef="let reservation">{{ reservation.date_fin }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="etat">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>État</mat-header-cell>
+          <mat-cell *matCellDef="let reservation">{{ reservation.etat }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; displayedColumns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [length]="totalItems" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)"></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+  
